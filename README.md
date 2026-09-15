@@ -1,45 +1,52 @@
-# inquiry-skills
+# Teaching and measuring multidimensional inquiry skills
 
-This repository is the official implementation of the AIED 2024 paper entitled "Teaching and Measuring Multidimensional Inquiry Skills using Interactive Simulations" written by [Ekaterina Shved](https://people.epfl.ch/kate.kutsenok?lang=en), [Engin Bumbacher](https://scholar.google.com/citations?user=yu5GSC4AAAAJ&hl=en), [Paola Mejia-Domenzain](https://people.epfl.ch/paola.mejia?lang=en), [Manu Kapur](https://www.manukapur.com) and [Tanja Käser](https://people.epfl.ch/tanja.kaeser/?lang=en). 
+Notebooks and study materials for the experiment on inquiry strategies in an interactive simulation (PhET Beer's Law Lab): parsing the logs, sequencing actions, labelling them by strategy, and clustering students into profiles.
 
-Uploaded experimental materials and source codes correspond directly to the experimental methodology mentioned in the paper. 
+**Teaching and Measuring Multidimensional Inquiry Skills using Interactive Simulations**  
+Ekaterina Shved, Engin Bumbacher, Paola Mejia-Domenzain, Manu Kapur, Tanja Käser. *AIED 2024*, 2024.  
+[DOI](https://doi.org/10.1007/978-3-031-64302-6_34) · [Preprint](https://osf.io/ag3tb) · [Abstract and BibTeX](https://paola-md.github.io/papers/teaching-and-measuring-multidimensional-inquiry-skills-using-interactive.html)
 
-## Project overview
+This is a fork of [epfl-ml4ed/inquiry-skills](https://github.com/epfl-ml4ed/inquiry-skills), kept under my account with a standardised README and a clean-up pass (unused imports, stray OS files, personal paths). The code is otherwise as published; open issues upstream.
 
-Our project expands existing research by exploring various inquiry strategies beyond the Control of Variables Strategy (CVS). We incorporate additional relevant strategies like exploring variable ranges and conducting experiments under optimal conditions. We conducted a study involving 161 chemistry apprentices who were randomly assigned to instructional conditions or a control group. Participants engaged in experimentation using an interactive simulation, with instruction focusing on either data collection or data interpretation.
-
-Using a multi-step clustering method, we identified four distinct student profiles of inquiry strategies. Our findings suggest that combining strategies is more effective for conceptual learning than utilizing them individually. Students instructed on data collection showed increased use of strategy combinations, particularly emphasizing the Control of Variables Strategy (CVS).
-
-## Usage guide
-
-1. Parser converts raw log-data files into readable dictionaries
-2. Sequencer converts parsed dictionaries into the sequences containing a current simulation state at each timestamp and an action taken
-3. Labeling code labels the actions according to the three inquiry strategies paradigms
-4. Clustering code clusters the students and reveals profiles based on students' behavior
-
-5. Experiment Flow presentation shows the structure of the experiment (including the task for the simulation and the content post-test)
-6. Pre-test Inquiry Skills is a short assessment taken before the main experiment to distribute students across the instructional conditions evenly regarding their prior knowledge of the inquiry strategies
-7. Tests Answers file includes answers for the pre-test on inquiry skills and the content post-test
-
-8. Beers Law Lab sim shows the simulation students used without implementation of the Data Table and Plot
-
-## Contributing 
-
-This code is provided for educational purposes and aims to facilitate reproduction of our results, and further research 
-in this direction. We have done our best to document, refactor, and test the code before publication.
-
-If you find any bugs or would like to contribute new models, training protocols, etc, please let us know. Feel free to file issues and pull requests on the repo and we will address them as we can.
-
-## Citations
-If you find this code useful in your work, please cite our paper:
+## What is here
 
 ```
-Shved, E., Bumbacher, E., Mejia-Domenzain, P., Kapur, M., Käser, T. (2024). 
-Teaching and Measuring Multidimensional Inquiry Skills using Interactive Simulations. 
-In: Proceedings of the 25th International Conference on Artificial Intelligence in Education (AIED 2024).
+Parser.ipynb       raw log files to dictionaries
+Sequencer.ipynb    dictionaries to (state, action) sequences
+Labeling.ipynb     actions labelled by inquiry strategy
+Clustering.ipynb   the multi-step clustering into profiles
+Experiment Flow.pdf            structure of the experiment
+Pre-test Inquiry skills.pdf    the pre-test
+Tests Answers.pdf              answer keys
+Beers Law Lab sim.html         the simulation as the students saw it
+LICENSE
 ```
 
-## License
-This code is free software: you can redistribute it and/or modify it under the terms of the [MIT License](LICENSE).
+## How to run
 
-This software is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose. See the [MIT License](LICENSE) for details.
+Run the four notebooks in the order listed. They expect the raw simulation logs, which are not included.
+
+## Data
+
+The student logs are not public.
+
+## Cite
+
+```bibtex
+@incollection{shved2024teaching,
+  title      = {{Teaching and Measuring Multidimensional Inquiry Skills using Interactive Simulations}},
+  author     = {Ekaterina Shved and Engin Bumbacher and Paola Mejia-Domenzain and Manu Kapur and Tanja Käser},
+  year       = {2024},
+  booktitle  = {Lecture Notes in Computer Science (AIED 2024)},
+  publisher  = {Springer Nature},
+  doi        = {10.1007/978-3-031-64302-6_34},
+  url        = {https://paola-md.github.io/papers/teaching-and-measuring-multidimensional-inquiry-skills-using-interactive.html}
+}
+```
+
+
+## Licence and status
+
+MIT, see `LICENSE`.
+
+Not maintained: kept as the record of the paper.
